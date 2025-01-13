@@ -5,7 +5,7 @@ export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}`
 export const APP_INFO: AppInfo = {
   title: 'JESSI 2.0',
   description: 'The J.Hilburn Educational Stylist Support Interface',
-  copyright: '',
+  copyright: 'J.Hilburn',
   privacy_policy: '',
   default_language: 'en',
 }
