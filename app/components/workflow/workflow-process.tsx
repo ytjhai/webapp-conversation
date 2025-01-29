@@ -9,7 +9,6 @@ import type { WorkflowProcess } from '@/types/app'
 import CheckCircle from '@/app/components/base/icons/solid/general/check-circle'
 import AlertCircle from '@/app/components/base/icons/solid/alert-circle'
 import Loading02 from '@/app/components/base/icons/line/loading-02'
-import ChevronRight from '@/app/components/base/icons/line/chevron-right'
 import { WorkflowRunningStatus } from '@/types/app'
 
 type WorkflowProcessProps = {
@@ -61,7 +60,7 @@ const WorkflowProcessItem = ({
           'flex items-center h-[18px] cursor-pointer',
           hideInfo && 'px-[6px]',
         )}
-        onClick={() => setCollapse(!collapse)}
+      // onClick={() => setCollapse(!collapse)}
       >
         {
           running && (
@@ -78,8 +77,8 @@ const WorkflowProcessItem = ({
             <AlertCircle className='shrink-0 mr-1 w-3 h-3 text-[#F04438]' />
           )
         }
-        <div className='grow text-xs font-medium text-gray-700 leading-[18px]'>Workflow Process</div>
-        <ChevronRight className={`'ml-1 w-3 h-3 text-gray-500' ${collapse ? '' : 'rotate-90'}`} />
+        {/* <div className='grow text-xs font-medium text-gray-700 leading-[18px]'>Workflow Process</div> */}
+        {/* <ChevronRight className={`'ml-1 w-3 h-3 text-gray-500' ${collapse ? '' : 'rotate-90'}`} /> */}
       </div>
       {
         !collapse && (

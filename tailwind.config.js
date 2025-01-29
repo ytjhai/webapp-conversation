@@ -19,15 +19,15 @@ module.exports = {
           800: '#1F2A37',
           900: '#111928',
         },
-        // translated using base brand color of #917957
+        // translated using base brand color of #000000
         // Using https://m2.material.io/design/color/the-color-system.html
         primary: {
-          50: '#f5ecdc',
-          100: '#decfbb',
-          200: '#c3b098',
-          300: '#a79174',
-          600: '#705835',
-          700: '#624b2c',
+          50: '#f5f5f5',
+          100: '#e6e6e6',
+          200: '#d9d9d9',
+          300: '#c4c4c4',
+          600: '#555555',
+          700: '#464646',
         },
         blue: {
           500: '#E1EFFE',
