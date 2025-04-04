@@ -10,12 +10,32 @@ import s from './style.module.css'
 import type { AppInfo } from '@/types/app'
 import Button from '@/app/components/base/button'
 
+const promptExamples = [
+  'Recommend me some clothes that use Loro Piana fabric.',
+  'What are the advantages of custom made clothing?',
+  'What is the difference between a spread collar and a classic collar?',
+  'Different lapels from J.Hilburn? Peak, shawl, and notch lapels.',
+  'Light weight sports coats for summer',
+]
+
 export const AppInfoComp: FC<{ siteInfo: AppInfo }> = ({ siteInfo }) => {
   const { t } = useTranslation()
   return (
     <div>
-      <div className='flex items-center py-2 text-xl font-medium text-gray-700 rounded-md'>👏 {t('app.common.welcome')} {siteInfo.title}</div>
-      <p className='text-sm text-gray-500'>{siteInfo.description}</p>
+      <div className='flex items-center py-2 text-xl font-medium text-gray-700 rounded-md justify-center'>Welcome to JESSI 2.0</div>
+      <p className='text-sm text-gray-500 text-center'>Press "Start Chat". Then get started by asking a question. Here are a few suggestions.</p>
+      <br />
+      <br />
+      <div className='text-center prompts-container'>
+        {promptExamples.map((item, index) => (
+          <span
+            key={index}
+            className='text-sm text-gray-700 text-center py-1 my-1 px-4 mx-4 bg-slate-200 inline-block rounded-xl'
+          >
+            <b>{item}</b>
+          </span>
+        ))}
+      </div>
     </div>
   )
 }
