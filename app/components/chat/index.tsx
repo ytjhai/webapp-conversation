@@ -1,6 +1,7 @@
 'use client'
 import type { FC } from 'react'
 import React, { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import cn from 'classnames'
 import { useTranslation } from 'react-i18next'
 import Textarea from 'rc-textarea'
@@ -15,6 +16,7 @@ import Toast from '@/app/components/base/toast'
 import ChatImageUploader from '@/app/components/base/image-uploader/chat-image-uploader'
 import ImageList from '@/app/components/base/image-uploader/image-list'
 import { useImageFiles } from '@/app/components/base/image-uploader/hooks'
+import lightbulb from '@/public/icons/lightbulb.svg'
 
 export type IChatProps = {
   chatList: ChatItem[]
@@ -192,7 +194,16 @@ const Chat: FC<IChatProps> = ({
                     </div>
                   }
                 >
-                  <div className={`${s.sendBtn} w-8 h-8 cursor-pointer rounded-md`} onClick={handleSend}></div>
+                  <div
+                    className={`${s.sendBtn} w-8 h-8 pt-1.5 cursor-pointer rounded-3xl text-center`}
+                    onClick={handleSend}
+                  >
+                    <Image
+                      src={lightbulb}
+                      alt="send"
+                      className="w-5 h-5 ml-1.5"
+                    />
+                  </div>
                 </Tooltip>
               </div>
             </div>
