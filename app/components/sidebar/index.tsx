@@ -3,9 +3,10 @@ import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   ChatBubbleOvalLeftEllipsisIcon,
-  PencilSquareIcon,
 } from '@heroicons/react/24/outline'
 import { ChatBubbleOvalLeftEllipsisIcon as ChatBubbleOvalLeftEllipsisSolidIcon } from '@heroicons/react/24/solid'
+import Image from 'next/image'
+import plusIcon from '@/public/icons/plus.svg'
 import Button from '@/app/components/base/button'
 // import Card from './card'
 import type { ConversationItem } from '@/types/app'
@@ -39,7 +40,7 @@ const Sidebar: FC<ISidebarProps> = ({
           <Button
             onClick={() => { onCurrentIdChange('-1') }}
             className="group block w-full flex-shrink-0 !justify-start !h-9 text-primary-600 items-center text-sm">
-            <PencilSquareIcon className="mr-2 h-4 w-4" /> {t('app.chat.newChat')}
+            <Image src={plusIcon} className="mr-2 h-4 w-4" alt='New Chat icon' /> {t('app.chat.newChat')}
           </Button>
         </div>
       )}
