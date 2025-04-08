@@ -14,8 +14,8 @@ const promptExamples = [
   'Recommend me some clothes that use Loro Piana fabric.',
   'What are the advantages of custom made clothing?',
   'What is the difference between a spread collar and a classic collar?',
-  'Different lapels from J.Hilburn? Peak, shawl, and notch lapels.',
-  'Light weight sports coats for summer',
+  'Recommend me clothes with silk in them.',
+  'Light weight sport coats for summer',
 ]
 
 export const AppInfoComp: FC<{ siteInfo: AppInfo }> = ({ siteInfo }) => {
