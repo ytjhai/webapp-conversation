@@ -1,5 +1,6 @@
 .answerIcon {
   position: relative;
+  margin-top: 1rem;
   background: url(/icons/jessi_assistant.svg) no-repeat;
 }
 
