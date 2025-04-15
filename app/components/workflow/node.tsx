@@ -67,7 +67,7 @@ const NodePanel: FC<Props> = ({ nodeInfo, hideInfo = false }) => {
             <AlertTriangle className='shrink-0 ml-2 w-3.5 h-3.5 text-[#F79009]' />
           )}
           {nodeInfo.status === 'running' && (
-            <div className='shrink-0 flex items-center text-primary-600 text-[13px] leading-[16px] font-medium'>
+            <div className='shrink-0 flex items-center text-primary-700 text-[13px] leading-[16px] font-medium'>
               <Loading02 className='mr-1 w-3.5 h-3.5 animate-spin' />
               <span>Running</span>
             </div>

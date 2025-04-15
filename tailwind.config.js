@@ -9,15 +9,15 @@ module.exports = {
     extend: {
       colors: {
         gray: {
-          50: '#F9FAFB',
-          100: '#F3F4F6',
-          200: '#E5E7EB',
-          300: '#D1D5DB',
-          400: '#9CA3AF',
-          500: '#6B7280',
-          700: '#374151',
-          800: '#1F2A37',
-          900: '#111928',
+          50: '#f7f7f7',
+          100: '#EFEFEF',
+          200: '#E6E6E6',
+          300: '#D1D1D1',
+          400: '#ADADAD',
+          500: '#8C8C8C',
+          700: '#464646',
+          800: '#333333',
+          900: '#111111',
         },
         // translated using base brand color of #000000
         // Using https://m2.material.io/design/color/the-color-system.html
