@@ -665,7 +665,7 @@ const Main: FC<IMainProps> = () => {
                     checkCanSend={checkCanSend}
                     visionConfig={visionConfig}
                   />
-                  <p className='text-center text-xs mt-4 text-gray-600 pl-6 absolute bottom-12 z-10 '>JESSI can make mistakes. Feedback on answers will help improve its quality.</p>
+                  <p className='text-center text-xs mt-4 text-gray-600 pl-4 absolute bottom-12 z-10 '>JESSI can make mistakes. Verify with Stylist Support.</p>
                 </div>
               </div>)
           }
