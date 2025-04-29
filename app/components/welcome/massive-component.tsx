@@ -22,7 +22,7 @@ export const AppInfoComp: FC<{ siteInfo: AppInfo }> = ({ siteInfo }) => {
   const { t } = useTranslation()
   return (
     <div>
-      <div className='flex items-center py-2 text-xl font-medium text-gray-700 rounded-md justify-center'>Welcome to JESSI 2.0</div>
+      <div className='flex items-center py-2 text-xl font-medium text-gray-700 rounded-md justify-center'>Welcome to JESSI 2</div>
       <p className='text-sm text-gray-500 text-center'>Press "Start Chat". Then get started by asking a question. Here are a few suggestions.</p>
       <br />
       <br />
