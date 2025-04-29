@@ -30,7 +30,7 @@ export const AppInfoComp: FC<{ siteInfo: AppInfo }> = ({ siteInfo }) => {
         {promptExamples.map((item, index) => (
           <span
             key={index}
-            className='text-sm font-light text-gray-900 text-center pt-1 pb-2 my-1 px-3 mx-2 bg-slate-200 inline-block rounded-xl'
+            className='text-sm font-light text-gray-900 text-center pt-1 pb-2 my-1 px-3 mx-2 bg-gray-200 inline-block rounded-xl'
           >
             <b>{item}</b>
           </span>
