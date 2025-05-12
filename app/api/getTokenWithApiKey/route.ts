@@ -45,7 +45,6 @@ export async function POST(request: NextRequest) {
   if (!apiKey || apiKey !== AUTHORIZED_IPAD_API_KEY)
     return NextResponse.json({ error: 'Unauthorized: Invalid API Key' }, { status: 401 })
 
-
   // 2. Validate required fields
   if (!email)
     return NextResponse.json({ error: 'Bad Request: Missing email' }, { status: 400 })
