@@ -25,6 +25,7 @@ import { addFileInfos, sortAgentSorts } from '@/utils/tools'
 
 export type IMainProps = {
   params: any
+  searchParams: any
 }
 
 const Main: FC<IMainProps> = () => {
