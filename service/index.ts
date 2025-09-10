@@ -40,8 +40,8 @@ export const sendChatMessage = async (
   }, { onData, onCompleted, onThought, onFile, onError, getAbortController, onMessageEnd, onMessageReplace, onNodeStarted, onWorkflowStarted, onWorkflowFinished, onNodeFinished })
 }
 
-export const fetchConversations = async () => {
-  return get('conversations', { params: { limit: 100, first_id: '' } })
+export const fetchConversations = async (token: string | null) => {
+  return get('conversations', { params: { limit: 100, first_id: '', token } })
 }
 
 export const fetchChatList = async (conversationId: string) => {
@@ -49,7 +49,9 @@ export const fetchChatList = async (conversationId: string) => {
 }
 
 // init value. wait for server update
-export const fetchAppParams = async () => {
+export const fetchAppParams = async (token: string | null) => {
+  if (token)
+    return get('parameters', { params: { token } })
   return get('parameters')
 }
 

@@ -228,7 +228,7 @@ const Main: FC<IMainProps> = () => {
     }
     (async () => {
       try {
-        const [conversationData, appParams] = await Promise.all([fetchConversations(), fetchAppParams()])
+        const [conversationData, appParams] = await Promise.all([fetchConversations(token), fetchAppParams(token)])
 
         // handle current conversation id
         const { data: conversations, error } = conversationData as { data: ConversationItem[]; error: string }
@@ -335,6 +335,7 @@ const Main: FC<IMainProps> = () => {
       notify({ type: 'info', message: t('app.errorMessage.waitForResponse') })
       return
     }
+    console.log('handleSend with token: ', token)
     const data: Record<string, any> = {
       token,
       inputs: currInputs,
@@ -428,7 +429,7 @@ const Main: FC<IMainProps> = () => {
           return
 
         if (getConversationIdChangeBecauseOfNew()) {
-          const { data: allConversations }: any = await fetchConversations()
+          const { data: allConversations }: any = await fetchConversations(token)
           const newItem: any = await generationConversationName(allConversations[0].id)
 
           const newAllConversations = produce(allConversations, (draft: any) => {
