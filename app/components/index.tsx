@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import produce, { setAutoFreeze } from 'immer'
 import { useBoolean, useGetState } from 'ahooks'
+import { useSearchParams } from 'next/navigation'
 import useConversation from '@/hooks/use-conversation'
 import Toast from '@/app/components/base/toast'
 import Sidebar from '@/app/components/sidebar'
@@ -49,6 +50,8 @@ const Main: FC<IMainProps> = () => {
     detail: Resolution.low,
     transfer_methods: [TransferMethod.local_file],
   })
+  const searchParams = useSearchParams()
+  const token = searchParams.get('token')
 
   useEffect(() => {
     if (APP_INFO?.title)
@@ -333,6 +336,7 @@ const Main: FC<IMainProps> = () => {
       return
     }
     const data: Record<string, any> = {
+      token,
       inputs: currInputs,
       query: message,
       conversation_id: isNewConversation ? null : currConversationId,
