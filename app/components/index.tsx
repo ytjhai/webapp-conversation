@@ -335,7 +335,6 @@ const Main: FC<IMainProps> = () => {
       notify({ type: 'info', message: t('app.errorMessage.waitForResponse') })
       return
     }
-    console.log('handleSend with token: ', token)
     const data: Record<string, any> = {
       token,
       inputs: currInputs,
