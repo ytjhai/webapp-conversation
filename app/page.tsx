@@ -6,9 +6,10 @@ import Main from '@/app/components'
 
 const App: FC<IMainProps> = ({
   params,
-}: any) => {
+  searchParams,
+}) => {
   return (
-    <Main params={params} />
+    <Main params={params} searchParams={searchParams} />
   )
 }
 
