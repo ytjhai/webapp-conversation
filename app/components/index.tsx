@@ -54,6 +54,13 @@ const Main: FC<IMainProps> = () => {
   const searchParams = useSearchParams()
   const token: string | null = searchParams.get('token')
 
+  // Store PPID in sessionStorage for API requests
+  useEffect(() => {
+    if (token) {
+      sessionStorage.setItem('ppid', token)
+    }
+  }, [token])
+
   useEffect(() => {
     if (APP_INFO?.title)
       document.title = `${APP_INFO.title} - Powered by Mister J`

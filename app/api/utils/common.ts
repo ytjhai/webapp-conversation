@@ -7,7 +7,7 @@ const userPrefix = `user_${APP_ID}:`
 
 // Helper: Decode PPID via external service
 async function decodePPID(ppid: string): Promise<{ user: string; sessionId: string } | null> {
-  if (!PPID_DECODER_URL || !PPID_DECODER_API_KEY) {
+  if (!PPID_DECODER_URL || PPID_DECODER_URL === 'undefined' || !PPID_DECODER_API_KEY || PPID_DECODER_API_KEY === 'undefined') {
     console.warn('PPID decoder not configured, skipping PPID resolution')
     return null
   }
