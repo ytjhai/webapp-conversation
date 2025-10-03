@@ -2,6 +2,8 @@ import type { AppInfo } from '@/types/app'
 export const APP_ID = `${process.env.NEXT_PUBLIC_APP_ID}`
 export const API_KEY = `${process.env.NEXT_PUBLIC_APP_KEY}`
 export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}`
+export const PPID_DECODER_URL = process.env.PPID_DECODER_URL || process.env.NEXT_PUBLIC_PPID_DECODER_URL || ''
+export const PPID_DECODER_API_KEY = process.env.PPID_DECODER_API_KEY || process.env.NEXT_PUBLIC_PPID_DECODER_API_KEY || ''
 export const APP_INFO: AppInfo = {
   title: 'JESSI',
   description: 'The J.Hilburn Educational Stylist Support Interface',

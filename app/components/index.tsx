@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import produce, { setAutoFreeze } from 'immer'
 import { useBoolean, useGetState } from 'ahooks'
+import { useSearchParams } from 'next/navigation'
 import useConversation from '@/hooks/use-conversation'
 import Toast from '@/app/components/base/toast'
 import Sidebar from '@/app/components/sidebar'
@@ -25,6 +26,7 @@ import { addFileInfos, sortAgentSorts } from '@/utils/tools'
 
 export type IMainProps = {
   params: any
+  searchParams: any
 }
 
 const Main: FC<IMainProps> = () => {
@@ -48,6 +50,16 @@ const Main: FC<IMainProps> = () => {
     detail: Resolution.low,
     transfer_methods: [TransferMethod.local_file],
   })
+
+  const searchParams = useSearchParams()
+  const token: string | null = searchParams.get('token')
+
+  // Store PPID in sessionStorage for API requests
+  useEffect(() => {
+    if (token) {
+      sessionStorage.setItem('ppid', token)
+    }
+  }, [token])
 
   useEffect(() => {
     if (APP_INFO?.title)
@@ -655,7 +667,7 @@ const Main: FC<IMainProps> = () => {
 
           {
             hasSetInputs && (
-              <div className='relative grow h-[200px] pc:w-[794px] max-w-full mobile:w-full pb-[66px] mx-auto mb-3.5 overflow-hidden'>
+              <div className='relative grow h-full pc:w-[794px] max-w-full mobile:w-full pb-[66px] mx-auto mb-3.5 overflow-hidden'>
                 <div className='h-full overflow-y-auto' ref={chatListDomRef}>
                   <Chat
                     chatList={chatList}

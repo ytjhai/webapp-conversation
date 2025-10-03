@@ -271,6 +271,13 @@ const baseFetch = (url: string, fetchOptions: any, { needAllResponseContent }: I
     delete options.params
   }
 
+  // Add PPID if available
+  const ppid = typeof window !== 'undefined' ? sessionStorage.getItem('ppid') : null
+  if (ppid) {
+    const separator = urlWithPrefix.includes('?') ? '&' : '?'
+    urlWithPrefix += `${separator}ppid=${encodeURIComponent(ppid)}`
+  }
+
   if (body)
     options.body = JSON.stringify(body)
 
@@ -383,7 +390,14 @@ export const ssePost = (
   }, fetchOptions)
 
   const urlPrefix = API_PREFIX
-  const urlWithPrefix = `${urlPrefix}${url.startsWith('/') ? url : `/${url}`}`
+  let urlWithPrefix = `${urlPrefix}${url.startsWith('/') ? url : `/${url}`}`
+
+  // Add PPID if available
+  const ppid = typeof window !== 'undefined' ? sessionStorage.getItem('ppid') : null
+  if (ppid) {
+    const separator = urlWithPrefix.includes('?') ? '&' : '?'
+    urlWithPrefix += `${separator}ppid=${encodeURIComponent(ppid)}`
+  }
 
   const { body } = options
   if (body)
